@@ -12,13 +12,10 @@ const Carousel = (props) => {
     } = props
 
     const getCountryCode = () => {
-        console.log(taxes)
         const selectedTax = taxes.find(tax => tax.taxRuleName === selectedGrant.taxRules[0])
         return selectedTax.countryCode
     }
 
-    console.log(selectedGrant)
-    console.log(countries)
     return (
        <div>
             <button onClick={prevGrant}>
