@@ -16,4 +16,10 @@ const countries = {
         img: AUSTRALIA,
     },
 }
-export default countries
+
+const getCountry = (taxes, name) => {
+    const selectedTax = taxes.find(tax => tax.taxRuleName === name)
+    return countries[selectedTax.countryCode]
+}
+
+export default getCountry

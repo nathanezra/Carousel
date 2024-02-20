@@ -1,0 +1,65 @@
+/* carousel comp */
+.carouselContainer {
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    margin: 5px;
+    height: 20px;
+    cursor: pointer;
+}
+.arrow:active {
+    background-color: rgb(187 223 255)
+}
+
+.flag {
+    height: 20px;
+    margin: 5px;
+}
+.stakeholderName {
+    margin: 5px;
+}
+.index {
+    margin: 5px;
+    color: gray;
+}
+.stakeholderName:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* chekclist comp */
+.checklistContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: scroll;
+    height: 200px;
+    width: 300px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 99%;
+    height: 50px;
+    border-radius: 2%;
+    border: 0.5px solid rgb(225, 225, 225);
+}
+
+.row:hover {
+    background-color: rgb(238, 239, 251);
+}
+.row:active {
+    background-color: rgb(189, 189, 189);
+}
+.taxLabel {
+    font-size: large;
+    font-weight: 500;
+}
+.grantLabel {
+    font-size:medium;
+    font-weight: 300;
+}
