@@ -13,20 +13,17 @@ const Checklist = (props) => {
     const [displayGroupUsers, setDisplayGroupUsers] = useState([])
 
     const onDisplay = (tax) => {
-        const newArray = {...displayGroupUsers}
-        if(newArray.hasOwnProperty(tax)) {
-            newArray[tax] = !newArray[tax]
-        } else {
-            newArray[tax] = true
-        }
-        setDisplayGroupUsers(newArray)
+        setDisplayGroupUsers(prevState => ({
+            ...prevState,
+            [tax]: !prevState[tax] ?? true
+        }))
     }
 
     return (
         <div className='checklistContainer'>
             {Object.entries(checkedGroups).map(([tax, group]) => (
-                <>
-                    <div className='row' onClick = {() => onDisplay(tax)} key={tax}>
+                <div key={tax}>
+                    <div className='row' onClick = {() => onDisplay(tax)} >
                         <img className='flag' src={getCountry(taxes, tax).img} />
                         <label className='taxLabel'>
                             <input
@@ -38,9 +35,9 @@ const Checklist = (props) => {
                         </label>
                     </div>
                     {displayGroupUsers[tax] ? 
-                            group.grants.map((grant) => (
-                                <div className='row' key={group.id}>
-                                    <div key={grant.name+tax}>
+                            group.grants.map((grant, index) => (
+                                <div className='row' key={`${grant.name}-${tax}-${index}`}>
+                                    <div>
                                         <label className='grantLabel'>
                                             <input
                                                 type="checkbox"
@@ -53,7 +50,7 @@ const Checklist = (props) => {
                                 </div>
                             ))
                     : null}
-                </>
+                </div>
             ))}
         </div>
   );

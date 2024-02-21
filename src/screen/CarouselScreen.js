@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from '../Components/Carousel.js'
-import './style.css'
 import Checklist from '../Components/Checklist.js';
+import './style.css'
 
 const tax1 = {
     countryCode: 1,
@@ -45,7 +45,6 @@ const CarouselScreen = (props) => {
 
     useEffect(() => {
         const taxPerUser = {}
-    
         for (const grant of grants) {
             for (const tax of grant.taxRules) {
                 if (taxPerUser[tax]) {
@@ -78,11 +77,15 @@ const CarouselScreen = (props) => {
         setSelectedGrant(0)
     },[filteredGrants])
 
+    const isCheckInOtherTaxRule = (grantName) => {
+        return Object.values(checkedGroups)
+            .filter((tax) => tax.checked && tax.grants.some(grant => grant.name === grantName && grant.checked)).length > 1
+    }
    
     const onCheckGrant = (groupName, grantName) => {
         const newGrants = checkedGroups[groupName].grants.map(grant => {
             if(grant.name === grantName) {
-                if (filteredGrants.length > 1 || !grant.checked) {
+                if (filteredGrants.length > 1 || !grant.checked || isCheckInOtherTaxRule(grant.name)) {
                     grant.checked = !grant.checked
                 }
             }
