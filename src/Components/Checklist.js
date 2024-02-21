@@ -38,20 +38,20 @@ const Checklist = (props) => {
                         </label>
                     </div>
                     {displayGroupUsers[tax] ? 
-                        <div className='row' key={group.id}>
-                            {group.grants.map((grant) => (
-                                <div key={grant.name+tax}>
-                                    <label className='grantLabel'>
-                                        <input
-                                            type="checkbox"
-                                            checked={grant.checked && group.checked}
-                                            onChange={() => onCheckGrant(tax, grant.name)}
-                                        />
-                                        {grant.name}
-                                    </label>
+                            group.grants.map((grant) => (
+                                <div className='row' key={group.id}>
+                                    <div key={grant.name+tax}>
+                                        <label className='grantLabel'>
+                                            <input
+                                                type="checkbox"
+                                                checked={grant.checked && group.checked}
+                                                onChange={() => onCheckGrant(tax, grant.name)}
+                                            />
+                                            {grant.name}
+                                        </label>
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
+                            ))
                     : null}
                 </>
             ))}

@@ -1,6 +1,10 @@
 .carouselNav {
-    background-color: rgb(206, 227, 245);
+    background-color: rgb(229 243 255);
     display: flex;
     justify-content: center;
     height: 70px;
+}
+
+.carouselScreen {
+    position: relative;
 }

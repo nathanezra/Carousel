@@ -13,6 +13,11 @@ const tax2 = {
     taxRuleName: "Rule B"
 }
 
+const tax3 = {
+    countryCode: 3,
+    taxRuleName: "Rule C"
+}
+
 const grant1 = {
     stakeholderName: "Aki Avni",
     taxRules: ["Rule B"]
@@ -23,8 +28,13 @@ const grant2 = {
     taxRules: ["Rule A"]
 }
 
-const grants = [grant1, grant2]
-const taxes = [tax1, tax2]
+const grant3 = {
+    stakeholderName: "Elie Coen",
+    taxRules: ["Rule C", 'Rule B']
+}
+
+const grants = [grant1, grant2, grant3]
+const taxes = [tax1, tax2, tax3]
 
 const CarouselScreen = (props) => {
     
@@ -61,7 +71,6 @@ const CarouselScreen = (props) => {
                 })
                 .filter((grant) => grant.taxRules.length > 0)
             setFilteredGrants(newGrantsArray)
-            console.log(newGrantsArray)
         }
     },[checkedGroups])
 
@@ -73,7 +82,9 @@ const CarouselScreen = (props) => {
     const onCheckGrant = (groupName, grantName) => {
         const newGrants = checkedGroups[groupName].grants.map(grant => {
             if(grant.name === grantName) {
-                grant.checked = !grant.checked
+                if (filteredGrants.length > 1 || !grant.checked) {
+                    grant.checked = !grant.checked
+                }
             }
             return grant
         })
@@ -85,6 +96,9 @@ const CarouselScreen = (props) => {
     }
 
     const onCheckGroup = (groupName) => {
+        if ((checkedGroups[groupName].grants.filter(grant => grant.checked).length === filteredGrants.length && checkedGroups[groupName].checked)) {
+            return
+        }
         setCheckedgroups(groups => ({
             ...groups,
             [groupName]: {...checkedGroups[groupName], checked: !checkedGroups[groupName].checked}
@@ -103,7 +117,7 @@ const CarouselScreen = (props) => {
     }
 
     return (
-        <div>
+        <div className='carouselScreen'>
             <div className='carouselNav'>
                 <Carousel 
                     setShowChecklist={() => setShowChecklist(!showChecklist)}

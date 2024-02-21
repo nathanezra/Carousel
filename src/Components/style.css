@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 .arrow:active {
-    background-color: rgb(187 223 255)
+    background-color: rgb(214, 236, 255)
 }
 
 .flag {
@@ -19,6 +19,7 @@
 }
 .stakeholderName {
     margin: 5px;
+    cursor: pointer;
 }
 .index {
     margin: 5px;
@@ -30,23 +31,31 @@
 }
 
 /* chekclist comp */
+
 .checklistContainer {
     display: flex;
+    position: absolute;
+    background-color: white;
     flex-direction: column;
-    margin: auto;
+    top: 54px; 
+    left: 35%;
+    width: 400px;
+    z-index: 100;
+    max-height: 200px;
     overflow-y: scroll;
-    height: 200px;
-    width: 300px;
+    scrollbar-width: none;
+    border: 0.5px solid rgb(225, 225, 225);
+    border-radius: 3%;
 }
 
 .row {
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 99%;
-    height: 50px;
     border-radius: 2%;
-    border: 0.5px solid rgb(225, 225, 225);
+    border-bottom: 0.5px solid rgb(225, 225, 225);
+    align-items: center;
+    min-height: 50px;
+    display: flex;
+    width: 100%;
 }
 
 .row:hover {
