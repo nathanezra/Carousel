@@ -31,5 +31,5 @@ Here are the big steps to code this carousel:
 - when the last user is checked on two rules, if we uncheck the rule with the displayed flag, change the flag
 
 ## Notice
-- I didnt implement several things because I wanted to work on that a reasonnable amount of time and because it was not reflecting that much my skills (exemple the arrows ups and downs on the tax groups in the check list the change of colours when you cannot click on an arrow, etc..).
+- I didnt implement several things because I wanted to work on that a reasonnable amount of time and because it was not reflecting that much my skills after what I already did (exemples: the arrows ups and downs on the tax groups in the check list, the change of colours when you cannot click on an arrow, the checkbox design that I let as it is etc..).
 - In real work I would have considered all the usecase and work on the css animation and work on the logic in a deeper scale (maybe with redux for exemple), taking into account the whole application and the long run of it.
