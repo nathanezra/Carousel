@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CarouselScreen from './screen/CarouselScreen'
+import CarouselScreen from './Screens/CarouselScreen'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <CarouselScreen/>,
   },
-]);
+])
 
 
 const App = () => {
