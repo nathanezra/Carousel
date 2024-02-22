@@ -29,7 +29,7 @@ Here are the big steps to code this carousel:
 - several taxRules for one user
 - when there is just one user in the checklist that is checked, it is impossible to uncheck the tax group or the user
 - when the last user is checked on two rules, if we uncheck the rule with the displayed flag, change the flag
-- There is one use case that I didnt implement but I am aware of: when a user is on two rules and one of the taxRule itself is not checked, but inside the user was checked. In this case I dont display near the user grant the good flag always. If the user itself was uncheck it would have been different.
+- There is one use case that I didnt implement but I am aware of: when a user is on two rules and one of the taxRule itself is not checked, but inside the user was checked. In this case I dont display near the user grant the good flag always. If the user itself was uncheck it would have been different. The way to fix that is to check in checkedGroups if the rule is checked and if not to move over the taxRules array.
 
 ## Notice
 - I didnt implement several things because I wanted to work on that a reasonnable amount of time and because it was not reflecting that much my skills after what I already did (exemples: everal css animations that we could add, grey arrow when you cannot click on it etc..).
