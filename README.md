@@ -29,9 +29,10 @@ Here are the big steps to code this carousel:
 - several taxRules for one user
 - when there is just one user in the checklist that is checked, it is impossible to uncheck the tax group or the user
 - when the last user is checked on two rules, if we uncheck the rule with the displayed flag, change the flag
+- There is one use case that I didnt implement but I am aware of: when a user is on two rules and one of the taxRule itself is not checked, but inside the user was checked. In this case I dont display near the user grant the good flag always. If the user itself was uncheck it would have been different.
 
 ## Notice
-- I didnt implement several things because I wanted to work on that a reasonnable amount of time and because it was not reflecting that much my skills after what I already did (exemples: the arrows ups and downs on the tax groups in the check list, the change of colours when you cannot click on an arrow, the checkbox design that I let as it is etc..).
+- I didnt implement several things because I wanted to work on that a reasonnable amount of time and because it was not reflecting that much my skills after what I already did (exemples: everal css animations that we could add, grey arrow when you cannot click on it etc..).
 - In real work I would have considered all the usecases and work on the css animation and work on the logic in a deeper scale (maybe with hooks redux or redux if need to store the states all over the app for exemple ), taking into account the whole application and the long run of it.
 
 ## Exercice
