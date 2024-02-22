@@ -69,8 +69,37 @@
 .taxLabel {
     font-size: large;
     font-weight: 500;
+    align-items: center;
+    display: flex;
 }
 .grantLabel {
     font-size:medium;
     font-weight: 300;
+    align-items: center;
+    display: flex;
 }
+.arrowUpDown {
+    height: 20px;
+    margin-left: auto;
+    padding: 5px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label{
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    background-size: cover;
+    cursor: pointer;
+    background-image: url('../Images/icons8-unchecked-checkbox-64.png');
+}   
+input[type="checkbox"]:checked + label{
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    background-size: cover;
+    cursor: pointer;
+    background-image: url('../Images/icons8-checkbox-64.png');
+}   
